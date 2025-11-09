@@ -1,8 +1,10 @@
 from aiogram import Bot, Dispatcher
 import asyncio
 from c_router import *
+from .ai_rqst import *
 
 async def main():
+    t_ai_rqst = AiRqst()
     t_bot = Bot(token="")
     t_dp = Dispatcher()
     router_class = CRouter(t_bot)
