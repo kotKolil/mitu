@@ -4,9 +4,10 @@ from aiogram.filters.command import Command
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 class CRouter:
-    def __init__(self, b_class):
+    def __init__(self, b_class, t_api_rqst):
         self.b_class = b_class
         self.t_router = Router(name=__name__)
+        self.t_api_rqst = t_api_rqst
 
         self.t_router.message(Command("start"))(self.start_command)
         self.t_router.message()(self.handle_message)
